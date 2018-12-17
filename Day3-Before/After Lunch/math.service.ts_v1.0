@@ -1,0 +1,30 @@
+import {ICalService} from "./cal.interface";
+
+export class MathService implements ICalService {
+	
+	constructor(){
+		console.log("Inside MathService constructor()!!!!!");
+	}
+
+	sum(valOne:number,valTwo:number) :number{
+		console.log("Inside MathService sum()!!!!!");
+		return valOne + valTwo;
+	}
+
+	diff(valOne:number,valTwo:number) :number {
+		console.log("Inside MathService diff()!!!!!");
+		return valOne - valTwo;
+	}
+
+	multiply(valOne:number,valTwo:number) :number {
+		console.log("Inside MathService multiply()!!!!!");
+		return valOne * valTwo;
+	}
+
+	divide(valOne:number,valTwo:number) :number {
+		console.log("Inside MathService divide()!!!!!");
+		return valOne / valTwo;
+	}
+
+
+} 

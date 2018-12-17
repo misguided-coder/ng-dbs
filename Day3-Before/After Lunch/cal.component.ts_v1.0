@@ -1,0 +1,38 @@
+import {Component} from "@angular/core";
+
+@Component({
+	selector:"app",
+	template:`<div>
+		<h1>{{title}}</h1>
+		<form>
+			Enter Number : 
+			<input type=number [(ngModel)]='valOne' name='valOne' /><br/>
+			Enter Number : 
+			<input type=number [(ngModel)]='valTwo' name='valTwo'  /><br/>
+			<input (click)='doSum();' type=button value='SUM' /><br/>
+			<input (click)='doDiff();' type=button value='DIFF' /><br/>
+			<h1>Result : {{result}}</h1>
+		</form>
+		</div>`
+})
+export class CalComponent { 
+	
+	title = "Simple Calculator";
+	valOne:number = 10;
+	valTwo:number = 10;
+	result:number;
+
+
+	doSum() {
+		console.log("Inside CalComponent doSum()!!!!!");
+		this.result = this.valOne + this.valTwo;
+	}
+
+	doDiff() {
+		console.log("Inside CalComponent doDiff()!!!!!");
+		this.result = this.valOne - this.valTwo;
+	}
+
+}
+
+

@@ -1,0 +1,48 @@
+import {Component} from "@angular/core";
+import {CalService} from "./cal.service";
+
+
+@Component({
+	selector:"app",
+	template:`<div>
+		<h1>{{title}}</h1>
+		<form>
+			Enter Number : 
+			<input type=number [(ngModel)]='valOne' name='valOne' /><br/>
+			Enter Number : 
+			<input type=number [(ngModel)]='valTwo' name='valTwo'  /><br/>
+			<input (click)='doSum();' type=button value='SUM' /><br/>
+			<input (click)='doDiff();' type=button value='DIFF' /><br/>
+			<h1>Result : {{result}}</h1>
+		</form>
+		</div>`
+})
+export class CalComponent { 
+
+	public title = "Simple Calculator";
+	private valOne:number = 10;
+	private valTwo:number = 10;
+	private result:number;
+
+	calService:CalService;
+
+	constructor(arg:CalService){
+		console.log("Inside CalComponent constructor()!!!!!");
+		this.calService = arg;
+	}
+
+	//Event listener function
+	doSum() {
+		console.log("Inside CalComponent doSum()!!!!!");
+		this.result = this.calService.sum(this.valOne,this.valTwo);
+	}
+
+	//Event listener function
+	doDiff() {
+		console.log("Inside CalComponent doDiff()!!!!!");
+		this.result = this.calService.diff(this.valOne,this.valTwo);
+	}
+
+}
+
+

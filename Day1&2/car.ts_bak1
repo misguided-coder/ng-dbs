@@ -1,0 +1,21 @@
+export class Car {
+
+	vin:number =100;
+	make:string = "Audi"; 
+	model:string = "Q7";
+	price:number = 5000000.00;
+	color:any = "Black";
+	features:string[] = ['automatic','sun roof','voice control'];
+	logo:string;
+
+	
+	constructor(vin:number,make:string,model:string,price:number,color:any = "Black",logo:string = "q5.png") {
+		console.log("Inside Car constructor()!!!!!");
+		this.vin = vin;
+		this.make = make;
+		this.model = model;
+		this.price = price;
+		this.color = color;
+		this.logo = logo;
+	}
+}

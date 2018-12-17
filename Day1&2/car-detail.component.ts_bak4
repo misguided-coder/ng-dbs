@@ -1,0 +1,49 @@
+import {Component} from "@angular/core";
+
+@Component({
+	selector:"app",
+	template:`<div>
+		<h1>{{title}}</h1>
+		<h2>Name : {{car.make}} {{car.model}}</h2>
+		<h2>Price : {{car.price}}</h2>
+		<h2>Color : {{car.color}}</h2>
+		<h2>Features : {{car.features}}</h2>
+	</div>`
+})
+export class CarDetailComponent {
+	
+	title:string = "It is all about Luxury Cars";
+	car:Car;
+
+	constructor() {
+		console.log("Inside CarDetailComponent constructor()!!!!!");
+		//this.car = new Car(101,"Audi","A1",1200000.00,"Red");
+
+		//positional arguments
+		this.car = new Car(101,"Audi","A1",1200000.00);
+	}
+
+	sayHello(){
+		console.log("Hello to Everyone.....");
+	}	
+}
+
+
+class Car {
+
+	vin:number =100;
+	make:string = "Audi"; 
+	model:string = "Q7";
+	price:number = 5000000.00;
+	color:any = "Black";
+	features:string[] = ['automatic','sun roof','voice control'];
+	
+	constructor(vin:number,make:string,model:string,price:number,color:any = "Black") {
+		console.log("Inside Car constructor()!!!!!");
+		this.vin = vin;
+		this.make = make;
+		this.model = model;
+		this.price = price;
+		this.color = color;
+	}
+}

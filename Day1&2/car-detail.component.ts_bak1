@@ -1,0 +1,25 @@
+import {Component} from "@angular/core";
+
+@Component({
+	selector:"app",
+	template:"<div><h1>{{title}}</h1><h2>{{make}}</h2><h2>{{model}}</h2><h2>{{price}}</h2><h2>{{sporty}}</h2><h2>{{purchaseDate}}</h2><h2>{{color}}</h2></div>"
+})
+export class CarDetailComponent {
+	
+	title:string = "It is all about Luxury Cars";
+	make = "Audi"; //type inference
+	model:string = "Q7";
+	price:number = 5000000.00;
+	sporty:boolean = true;
+	purchaseDate:Date = new Date();
+	color:any = "Black";
+
+	constructor() {
+		console.log("Inside HelloComponent constructor()!!!!!");
+		this.color = "Yellow";
+	}
+
+	sayHello(){
+		console.log("Hello to Everyone.....");
+	}	
+}

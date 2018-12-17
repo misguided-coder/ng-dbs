@@ -1,0 +1,24 @@
+export class JokeService {
+	
+	jokes:string[] = [];
+
+	constructor(){
+		this.jokes.push("Angular is very difficult to learn");
+		this.jokes.push("Time for party");
+		this.jokes.push("Today is an amazing day");
+	}
+
+	nextJoke() :string {
+		console.log("Inside JokeService nextJoke()");
+		
+		let idx = Math.floor(Math.random()*this.jokes.length);
+		return this.jokes[idx];
+	}
+
+	add(newJoke:string) {
+		console.log("Inside JokeService add()");
+		this.jokes.push(newJoke);
+	}
+	
+
+}
