@@ -1,0 +1,11 @@
+server:
+  port: 7000   
+  servlet:
+    context-path: /indiancars
+    
+logging:
+  level:
+    root: debug       
+
+  
+    
